@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Users from './components/Users';
 import Albums from './components/Albums';
 import Photos from './components/Photos';
@@ -11,7 +11,11 @@ class App extends Component {
       <Router>
         <div className="App">
           
-          <div className="users-albums">
+            <Route path="/" component={Users}/>
+            <Route path="/users/:userId/" component={Albums}/>
+            <Route path="/users/:userId/albums/:albumId/" component={Photos}/>
+
+          {/* <div className="users-albums">
           
             <div className="users">
               <Link to="/users"><div>Users</div></Link>
@@ -25,7 +29,7 @@ class App extends Component {
 
           <div className="photos">
             <Route path="/albums/:albumId" component={Photos} />
-          </div>
+          </div> */}
 
         </div>
       </Router>
