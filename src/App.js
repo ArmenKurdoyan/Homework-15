@@ -11,26 +11,11 @@ class App extends Component {
       <Router>
         <div className="App">
           
+          <div className="users-albums">
             <Route path="/" component={Users}/>
             <Route path="/users/:userId/" component={Albums}/>
-            <Route path="/users/:userId/albums/:albumId/" component={Photos}/>
-
-          {/* <div className="users-albums">
-          
-            <div className="users">
-              <Link to="/users"><div>Users</div></Link>
-              <Route path="/users" component={Users} />
-            </div>
-
-            <div className="albums">
-              <Route path="/users/:userId" component={Albums} />
-            </div>
           </div>
-
-          <div className="photos">
-            <Route path="/albums/:albumId" component={Photos} />
-          </div> */}
-
+            <Route path="/users/:userId/albums/:albumId/" component={Photos}/>
         </div>
       </Router>
     );
